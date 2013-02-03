@@ -1,3 +1,15 @@
+<?php
+	session_start();
+	if(isset($_POST['login'])){
+		//Pwede bag ganito yung pagconfirm ng account ng admin? Hhe.
+		if($_POST['middleinitial']=='admin' && $_POST['pwdconfirm']=='hotel128'){
+			$_SESSION['login']=1;
+			header('Location: admin.php');
+			exit;
+		}else echo 'Invalid username/password';
+	}
+?>
+
 <html>
   <head>
 		<link rel="stylesheet" type="text/css" href="Style.css"/>
@@ -16,7 +28,7 @@
 	
 	<tr>
 	<td class = "loginBottom1">Username: </td>
-	<td><input class = "form"type="text" name="middleinitial" value="" size="35" />
+	<td><input class = "form" type="text" name="middleinitial" value="" size="35" />
 	</td>
 	
 	<tr>
