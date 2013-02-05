@@ -1,107 +1,114 @@
 <html>
   <head>
 		<link rel="stylesheet" type="text/css" href="Style.css"/>
-	</head>
+		 <script type = "text/javascript" src = "javascript.js"></script>
+	<?php 
 	
+		session_start();
+	?>
+	</head>
+
 	<body>
-<div class="log3">
-<table class = "loginBottom"> 
-	<form name = "add" method = "POST" action = "">
+
+	<div class="log3">
+	<table class = "loginBottom"> 
+	<form name = "add" method = "POST" action = "process_sign_up.php">
 		
 		<tr>
 			<div id = "signup">
 				Sign Up Form
 			</div>
 		</tr>
-		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
 		<tr>
 			<td colspan = "2"><hr><td>
 		</tr>
-	
-	</br>
-	
-	<tr>
-	<td class = "loginBottom1">Email Address: </td> 
-		<td><input class = "form" type="text" name="idnum" value="" size="35" />
-		</td>
-	</tr>
 
-	
-	</br>
-	
-	<tr>
-	<td class = "loginBottom1">Name: </td> 
-		<td><input class = "form" type="text" name="firstname" value="" size="35" />
-		</td>
-	</tr>
-	<!--kung paghihiwalayin natin ung name	
-	<tr>
-		<td class = "loginBottom1">Middle Name: </td> 
-		<td><input class = "form" type="text" name="firstname" value="" size="35" />
-		</td>
-	</tr>
-	
-	<tr>
-		<td class = "loginBottom1">Last Name: </td> 
-		<td><input class = "form" type="text" name="firstname" value="" size="35" />
-		</td>
-	</tr>
-	-->
-	</br>
-	
-	
-	<tr>
-	<td class = "loginBottom1">Username: </td>
-	<td><input class = "form"type="text" name="username" value="" size="35" />
-	</td>
-	
-	<tr>
-		<td class = "loginBottom1">Password: </td>
-		<td><input class = "form"type="password" name="pwd" value="" size="35" />
-	</td>
-	
-	<tr>
-		<td class = "loginBottom1">Confirm Password: </td>
-		<td><input class = "form"type="password" name="pwdconfirm" value="" size="35" />
-	</td>
+		<tr>
+			<td class = "loginBottom1">First Name: </td> 
+			<td><input class = "form" type="text" name="firstname" value="<?php if(!empty($_SESSION['firstname'])) echo $_SESSION['firstname']; ?>" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z ]*[a-zA-Z ]*[a-zA-Z ]"/>
+			</td>
+		</tr>
 
-	</br>
-	
-	
-	<tr>
-	<td class = "loginBottom1">Contact Number:</td>
-	<td><input class = "form"type="text" name="contact" value="" size="35" />
-	</td>
+		<tr>
+			<td class = "loginBottom1">Last Name: </td> 
+			<td><input class = "form" type="text" name="lastname" value="<?php if(!empty($_SESSION['lastname'])) echo $_SESSION['lastname']; ?>" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z ]*[a-zA-Z ]*[a-zA-Z ]"/>
+			</td>
+		</tr>
 
-	</br>
+		<tr>
+			<td class = "loginBottom1">Email Address: </td> 
+			<td><input class = "form" type="email" name="eadd" value="<?php if(!empty($_SESSION['eadd'])) echo $_SESSION['eadd']; ?>" size="35" required="required"/>
+			</td>
+		</tr>
+
+		<tr>
+			<td class = "loginBottom1">Username: </td>
+			<td><input class = "form" type="text" name="username" id="username" value="<?php if(!empty($_SESSION['username'])) echo $_SESSION['username']; ?>" size="35" required="required" onchange = "toUpper(this);" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9]*[a-zA-Z0-9 ]"/>
+			</td>
+		</tr>
 		
-	<tr>
-	<td class = "loginBottom1">Gender:</td>
-	<td><select class="form" name= "gender">
-	  <option value="NOVALUE" ></option>
-	  <option value="MALE" >MALE</option>
-	  <option value="FEMALE" >FEMALE</option>
-	</select> </td></tr>
+		<tr>
+			<td class = "loginBottom1">Password: </td>
+			<td><input class = "form"type="password" name="pwd" value="" size="35" required="required"/>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class = "loginBottom1">Confirm Password: </td>
+			<td><input class = "form"type="password" name="pwdconfirm" value="" size="35" required="required"/>
+			</td>
+		</tr>
 	
-	</br>
-	
-	<tr>
+		<tr>
+			<td class = "loginBottom1">Contact Number:</td>
+			<td><input class = "form"type="text" name="contact" value="<?php if(!empty($_SESSION['contact'])) echo $_SESSION['contact']; ?>" size="35" required="required" pattern = "[0-9]*[0-9]*[0-9]"/>
+			</td>
+		</tr>
 
+		<tr>
+			<td class = "loginBottom1">Credit Card No.:</td>
+			<td><input class = "form"type="text" name="creditcardno1" value="<?php if(!empty($_SESSION['creditcardno1'])) echo $_SESSION['creditcardno1']; ?>" size="1" required="required" pattern = "[0-9][0-9][0-9][0-9]"/>-
+					<input class = "form"type="text" name="creditcardno2" value="<?php if(!empty($_SESSION['creditcardno2'])) echo $_SESSION['creditcardno2']; ?>" size="1" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
+					<input class = "form"type="text" name="creditcardno3" value="<?php if(!empty($_SESSION['creditcardno3'])) echo $_SESSION['creditcardno3']; ?>" size="1" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
+					<input class = "form"type="text" name="creditcardno4" value="<?php if(!empty($_SESSION['creditcardno4'])) echo $_SESSION['creditcardno4']; ?>" size="1" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>
+			</td>
+		</tr>
+		
 		<tr>
 			<td colspan = "2" class = "loginBottom3"><span class = "textBlack">I </span><span class = "textBluer">CERTIFY</span> <span class = "textBlack">that all the information given in this form <br/>are true and correct.</span></td>
 		</tr>
 		
-	<tr>
+		<tr>
+			<td colspan = "2" class = "loginBottom1">
+			<input id="mysubmit" type="submit" value="Submit" name = "sub" />
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan = "2" class = "loginBottom3">
+				<span class = "errorMsg"><br />
+				<?php
+					if(!empty($_SESSION['ERROR'])){
+						if($_SESSION['ERROR']==true && !empty($_SESSION['ERRORMSG']))
+							echo $_SESSION['ERRORMSG'];
+					}
+					if(!empty($_SESSION['MSG']))
+							echo $_SESSION['MSG'];
+					session_destroy();
+				?>
+				</span>
+			</td>
+		</tr>
+
 	
-	<td colspan = "2" class = "loginBottom1">
-		<input id="mysubmit" type="submit" value="Submit" name = "sub" />
-	</td>
-	</tr>
-</table> 	
-	
-	
-	</form>
-	</div>
-	</body>
+</table>
+</form>	
+</div>
+</body>
 	
 </html>
