@@ -144,7 +144,12 @@ div.footnote{
 	font-size: 11px;
 	text-align: center;
 }
-
+.errorMsg{
+	text-decoration:none;
+	color: #CC0E0E;
+	font-size: 12px;
+	font-weight: bold;
+}
 
 a.button:link,
 a.button:visited{
