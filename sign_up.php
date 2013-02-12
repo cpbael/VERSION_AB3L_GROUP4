@@ -1,14 +1,7 @@
-<html>
-  <head>
-		<link rel="stylesheet" type="text/css" href="Style.css"/>
-		 <script type = "text/javascript" src = "javascript.js"></script>
-	<?php 
-	
-		session_start();
-	?>
-	</head>
-
-	<body>
+<?php 
+	require_once"header.php";
+	session_start();
+?>
 
 	<div class="log3">
 	<table class = "loginBottom"> 

@@ -1,12 +1,6 @@
 <?php 
-  require_once "sql_connect.php";
-	session_start();
-	if(isset($_SESSION['member_id'])){
-		$id=$_SESSION['member_id'];
-	}else{
-		header("Location:login.php");
-	}
-	//require_once "do_check_login.php";
+	require_once "sql_connect.php";
+	require_once "process_check_if_logged_in.php";
 ?>
 <html>
 	<head>

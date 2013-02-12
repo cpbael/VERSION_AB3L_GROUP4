@@ -1,17 +1,11 @@
 <?php 
+  require_once "process_check_if_logged_in.php";
   require_once "sql_connect.php";
-	session_start();
-	//echo $_SESSION['member_id'];
-	if(isset($_SESSION['member_id'])){
-		$id=$_SESSION['member_id'];
-	}else{
-		echo "not set";
-		}
 	//require_once "do_check_login.php";
 ?>
 
 <?php
-	$account_info=mysql_fetch_array(mysql_query("select * from member where member_id={$id};"));
+	$account_info=mysql_fetch_array(mysql_query("select * from member where member_id={$_SESSION['member_id']};"));
 					echo "<pre>".var_dump($account_info)."</pre>";
 
 ?>

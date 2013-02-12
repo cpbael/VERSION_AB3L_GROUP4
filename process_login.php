@@ -1,15 +1,6 @@
  <?php
-  session_start();
-	$link = mysql_connect('localhost', 'root', '');
-		if (!$link) {
-			die('Could not connect to mysql: ' . mysql_error());
-		}else{
-			$db = mysql_select_db("hrm", $link); 
-		
-			if (!$db) {
-				die('Could not connect to database: ' . mysql_error());
-			}
-		}
+	require_once("sql_connect.php");
+	session_start();
 	if(isset($_POST['login'])){
 		//Member
 		$result = mysql_query("SELECT * FROM member");
@@ -18,6 +9,7 @@
 				$_SESSION['login']=1;
 				$_SESSION['member_id']=$row['member_id'];
 				header('Location: home.php');
+				require_once("sql_disconnect.php");
 				exit;
 			}
 		}
@@ -28,9 +20,12 @@
 		if($_POST['middleinitial']==$row['username'] && md5($_POST['pwdconfirm'])==$row['password']){
 				$_SESSION['login']=1;
 				header('Location: admin.php');
+				require_once("sql_disconnect.php");
 				exit;
 		}
+		
+		$_SESSION['login_msg']='Username or password incorrect';
+		header("Location:login.php");
 	}
 	
-	mysql_close($link);
 ?>

@@ -33,17 +33,6 @@ CREATE TABLE IF NOT EXISTS `service` (
   `classification` enum('ROOM','FACILITY','SERVICE') NOT NULL,
   `article` text NOT NULL,
   PRIMARY KEY (`service_id`),
-  UNIQUE KEY `classification_4` (`classification`),
-  KEY `service_id` (`service_id`),
-  KEY `service_id_2` (`service_id`),
-  KEY `service_id_3` (`service_id`),
-  KEY `service_id_4` (`service_id`),
-  KEY `classification` (`classification`),
-  KEY `classification_2` (`classification`),
-  KEY `classification_3` (`classification`),
-  KEY `classification_5` (`classification`),
-  KEY `service_id_5` (`service_id`),
-  KEY `classification_6` (`classification`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
