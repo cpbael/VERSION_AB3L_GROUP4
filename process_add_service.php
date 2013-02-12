@@ -1,26 +1,21 @@
 <?php
   session_start();
+	require_once"sql_connect.php";
 
-	
-		$link = mysql_connect('localhost', 'root', '');
-		if (!$link) {
-			die('Could not connect to mysql: ' . mysql_error());
-		}else{
-			$db = mysql_select_db("hrm", $link); 
-		
-			if (!$db) {
-				die('Could not connect to database: ' . mysql_error());
-			}
-		}
-		
 		$service_name=$_POST['service_name'];
 		$rate=$_POST['rate'];
 		$type=$_POST['type'];
 		$classification=$_POST['classification'];
 		$article=$_POST['article'];
 		
-		$query = "INSERT INTO service VALUES (NULL, '$service_name', '$rate', '$classification', '$article')";
-			
+		$img_type=$_FILES['image']['type'];
+		$img_type=str_replace("image/",".",$img_type);
+		
+		$image=$_FILES['image']['name'].$img_type;
+		move_uploaded_file($_FILES['image']['tmp_name'],"images/{$image}");
+
+		$query = "INSERT INTO service(service_name,rate,classification,article,image) VALUES ('$service_name', '$rate', '$classification', '$article','$image')";
+
 		$result = mysql_query($query);
 
 		if (!$result) {
@@ -31,8 +26,8 @@
 			$_SESSION['MSG']="SERVICE ADDED SUCCESSFULLY!";
 			echo $_SESSION['MSG'];
 		}
-		
+
 		mysql_close($link);
-		
+
 		header("LOCATION:add_service.php"); 
 ?>
