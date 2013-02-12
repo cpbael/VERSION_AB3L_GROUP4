@@ -3,7 +3,7 @@
   	<link rel="stylesheet" type="text/css" href="Style.css"/>
 		 <script type = "text/javascript" src = "javascript.js"></script>
 	<?php 
-	
+
 		session_start();
 	?>
 	</head>
@@ -12,7 +12,7 @@
 
 	<div class="log3">
 	<table class = "loginBottom"> 
-	<form name = "add" method = "POST" action = "process_add_service.php">
+	<form name = "add" method = "POST" action = "process_add_service.php" enctype="multipart/form-data">
 		
 		<tr>
 			<div id = "signup">
@@ -41,6 +41,12 @@
 		<tr>
 			<td class = "loginBottom1">Type:</td>
 			<td><input class = "form" type="text" name="type" value="" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9 ]*[a-zA-Z0-9 ]"/>
+			</td>
+		</tr>
+		<tr>
+			<td class = "loginBottom1">Image:</td>
+			<td>
+				<input class = "form" type="file" name="image"  required="required" />
 			</td>
 		</tr>
 		<tr>
