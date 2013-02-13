@@ -23,6 +23,7 @@
 		unset($_SESSION['login_msg']);
 		session_destroy();
 	?>
+	<center><img src="images/HotelLogo.jpg" alt="some_text" width="330" height="228"></center>
 	
 	<tr>
 	<td class = "loginBottom1">Username: </td>
@@ -37,8 +38,8 @@
 	<tr>
 
 		<tr>
-			<td><span class="textBluer"><a href="sign_up.php">Sign-up</a></span></td>
-			<td><span class = "textBluer"><a href="#">Forgot Password?</a></span></td>
+			<td><span class = "allTextBlue"><a class = "button2" href="sign_up.php">Sign-up</a></span></td>
+			<td><span class = "allTextBlue"><a class = "button2"  href="#">Forgot Password?</a></span></td>
 		</tr>
 		
 	<tr>

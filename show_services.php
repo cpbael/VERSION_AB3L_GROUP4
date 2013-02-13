@@ -21,6 +21,8 @@
 				echo "<tr><td>{$services[$i]['rate']}</td></tr>";
 				echo "<tr><td>{$services[$i]['classification']}</td></tr>";
 				echo "<tr><td>{$services[$i]['article']}</td></tr>";
+				echo "<tr><td><a href='process_delete_service.php?service_id={$services[$i]['service_id']}'>Delete</a></td></tr>";
+				echo "<tr><td><a href='edit_service.php?service_id={$services[$i]['service_id']}'>Edit</a></td></tr>";
 			echo "</table></td>";
 			if($col==4){
 				echo "</tr>";	

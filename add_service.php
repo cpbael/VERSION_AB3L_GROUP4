@@ -1,21 +1,12 @@
-<html>
-  <head>
-  	<link rel="stylesheet" type="text/css" href="Style.css"/>
-		 <script type = "text/javascript" src = "javascript.js"></script>
-	<?php 
-
-		session_start();
-	?>
-	</head>
-
-	<body>
-
+<?php require_once"header.php";
+	session_start();
+?>
 	<div class="log3">
 	<table class = "loginBottom"> 
 	<form name = "add" method = "POST" action = "process_add_service.php" enctype="multipart/form-data">
 		
 		<tr>
-			<div id = "signup">
+			<div class = "signup">
 				Add Service
 			</div>
 		</tr>
@@ -38,11 +29,11 @@
 			<td><input class = "form"type="text" name="rate" value="" size="35" required="required" pattern = "[0-9]*[0-9]*[0-9]"/>
 			</td>
 		</tr>
-		<tr>
+		<!--tr>
 			<td class = "loginBottom1">Type:</td>
 			<td><input class = "form" type="text" name="type" value="" size="35"   required="required" onchange = "toUpper(this)" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9 ]*[a-zA-Z0-9 ]"/>
 			</td>
-		</tr>
+		</tr-->
 		<tr>
 			<td class = "loginBottom1">Image:</td>
 			<td>
@@ -76,7 +67,8 @@
 				<?php
 					if(!empty($_SESSION['MSG']))
 							echo $_SESSION['MSG'];
-					session_destroy();
+					unset($_SESSION['MSG']);
+					//session_destroy();
 				?>
 				</span>
 			</td>
@@ -86,6 +78,4 @@
 </table>
 </form>	
 </div>
-</body>
-	
-</html>
+<?php require_once"footer.php";?>

@@ -20,7 +20,7 @@
 		
 		$result=mysql_query($query);
 		while($row = mysql_fetch_array($result)){
-			if($_POST['username']==$row[1]){
+			if($_POST['username']==$row['uname']){
 				$_SESSION['ERROR']=true;
 				$_SESSION['ERRORMSG']="*USERNAME NOT AVAILABLE";
 				break;
@@ -32,15 +32,18 @@
 			$uname=$_POST['username'];
 			$password=$_POST['pwd'];
 			$fullname=$_POST['firstname']." ".$_POST['lastname'];
-			$contactno=(int)$_POST['contact'];
+			$contactno=$_POST['contact'];
 			$eadd=$_POST['eadd'];
 			$creditcardno=$_POST['creditcardno1']."".$_POST['creditcardno2']."".$_POST['creditcardno3']."".$_POST['creditcardno4'];
-			$query = "INSERT INTO member VALUES (NULL, '$uname', '$password', '$fullname', '$contactno', '$eadd', '$creditcardno')";
+			// $query = "INSERT INTO member(uname,password,fullname,contactno,eadd) VALUES ('$uname', '$password', '$fullname', '$contactno', '$eadd', '$creditcardno')";
+			$query = "INSERT INTO member(uname,password,fullname,contactno,eadd) VALUES ('$uname', md5('$password'), '$fullname', '$contactno', '$eadd')";
 			
 			$result = mysql_query($query);
 
 			if (!$result) {
 				$_SESSION['ERROR']=true;
+				die('Could not add service: ' . mysql_error());
+				$_SESSION['MSG']="SORRY!";
 			}else{
 				$_SESSION['ERROR']=false;
 				$_SESSION['MSG']="SIGN-UP SUCCESSFUL!";

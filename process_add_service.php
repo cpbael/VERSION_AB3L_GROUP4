@@ -8,10 +8,11 @@
 		$classification=$_POST['classification'];
 		$article=$_POST['article'];
 		
-		$img_type=$_FILES['image']['type'];
-		$img_type=str_replace("image/",".",$img_type);
+		//$img_type=$_FILES['image']['type'];
+		// $img_type=str_replace("image/",".",$img_type);
 		
-		$image=$_FILES['image']['name'].$img_type;
+		//$image=$_FILES['image']['name'].$img_type;
+		$image=$_FILES['image']['name'];
 		move_uploaded_file($_FILES['image']['tmp_name'],"images/{$image}");
 
 		$query = "INSERT INTO service(service_name,rate,classification,article,image) VALUES ('$service_name', '$rate', '$classification', '$article','$image')";

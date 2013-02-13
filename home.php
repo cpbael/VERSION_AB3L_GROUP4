@@ -13,8 +13,6 @@
 				foreach($info as $key=>$value){
 					echo "{$key} : {$value} <br/>";
 				}
-				//echo "<pre>".var_dump($_SESSION['member'])."</pre>";
-				//echo "<pre>".var_dump($info)."</pre>";
 			?>
 			<a href="<?php echo $edit_url;?>">Edit Account</a>
 	<br/>		

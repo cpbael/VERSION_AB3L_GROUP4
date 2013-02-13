@@ -6,7 +6,7 @@
 
 <?php
 	$account_info=mysql_fetch_array(mysql_query("select * from member where member_id={$_SESSION['member_id']};"));
-					echo "<pre>".var_dump($account_info)."</pre>";
+	//echo "<pre>".var_dump($account_info)."</pre>";
 
 ?>
 
@@ -21,7 +21,7 @@
 	<form name = "add" method = "POST" action = "process_update.php">
 		
 		<tr>
-			<div id = "signup">
+			<div class = "signup">
 				Edit account
 			</div>
 		</tr>
@@ -114,6 +114,8 @@
 	
 	</form>
 	</div>
-	</body>
-<?php require_once("sql_disconnect.php")?>
-</html>
+<?php
+ require_once("footer.php");	
+ require_once("sql_disconnect.php");
+ 
+ ?>
