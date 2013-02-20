@@ -63,14 +63,22 @@
 			</td>
 		</tr>
 
+<<<<<<< HEAD
 		<!--tr>
+=======
+		<!--<tr>
+>>>>>>> fbf72d7a12c94ba3ce72ef9ff64b3cdf47840d89
 			<td class = "loginBottom1">Credit Card No.:</td>
 			<td><input class = "form"type="text" name="creditcardno1" value="<?php if(!empty($_SESSION['creditcardno1'])) echo $_SESSION['creditcardno1']; ?>" size="1" required="required" pattern = "[0-9][0-9][0-9][0-9]"/>-
 					<input class = "form"type="text" name="creditcardno2" value="<?php if(!empty($_SESSION['creditcardno2'])) echo $_SESSION['creditcardno2']; ?>" size="1" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
 					<input class = "form"type="text" name="creditcardno3" value="<?php if(!empty($_SESSION['creditcardno3'])) echo $_SESSION['creditcardno3']; ?>" size="1" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
 					<input class = "form"type="text" name="creditcardno4" value="<?php if(!empty($_SESSION['creditcardno4'])) echo $_SESSION['creditcardno4']; ?>" size="1" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>
 			</td>
+<<<<<<< HEAD
 		</tr-->
+=======
+		</tr>-->
+>>>>>>> fbf72d7a12c94ba3ce72ef9ff64b3cdf47840d89
 		
 		<tr>
 			<td colspan = "2" class = "loginBottom3"><span class = "textBlack">I </span><span class = "textBluer">CERTIFY</span> <span class = "textBlack">that all the information given in this form <br/>are true and correct.</span></td>

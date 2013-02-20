@@ -3,6 +3,10 @@
 	if(!$conn){
 		die('Could not connect to database:'.mysql_error());
 	}
-	mysql_select_db('hrm',$conn);		
+	mysql_select_db('hrm',$conn);
+
+	if (!$conn) {
+				die('Could not connect to database: ' . mysql_error());
+			}
 ?>
 
