@@ -1,5 +1,6 @@
-<?php require_once"header.php";
-	session_start();
+<?php
+	require_once"process_check_if_logged_in.php";
+	require_once"header.php";
 ?>
 	<div class="log3">
 	<table class = "loginBottom"> 
@@ -72,9 +73,7 @@
 				?>
 				</span>
 			</td>
-		</tr>
-
-	
+		</tr>	
 </table>
 </form>	
 </div>

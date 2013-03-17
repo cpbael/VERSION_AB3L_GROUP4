@@ -9,19 +9,20 @@
 	if(md5($old)===$true_old['password']){
 		if($new===$confirm){
 			if(mysql_query("update member set password=md5('{$confirm}') where member_id={$_SESSION['member_id']};")){
-				echo "Success";
+				$_SESSION['ERROR']=false;
+				$_SESSION['MSG']="Password succesfully changed";				
 			}else{
-				echo "Nagkaproblem";
+				$_SESSION['ERROR']=false;
+				$_SESSION['MSG']="Password was not changed";	
 			}
 		}else{
-			echo "Passwords do not match";
+			$_SESSION['ERROR']=true;
+			$_SESSION['MSG']="Passwords do not match";	
 		}
 	}else{
-		echo "Old Password Incorrect<br/>";
-		echo "INPUT".md5($old);
-		echo "<br/>";
-		echo "DATI:".$true_old['password'];
+		$_SESSION['ERROR']=true;
+		$_SESSION['MSG']="Incorrect password.";	
 	}
-	
 	require_once("sql_disconnect.php");
+	header("Location:change_password.php");
 ?>
