@@ -15,7 +15,25 @@
 	</head>
     <body>
 
+<<<<<<< HEAD
 	</body>
 	
 </html>
 	
+=======
+	<h1>Welcome to HRM</h1>
+			WELCOME! <a href="process_logout.php">Logout</a> <br/>
+			<?php
+				foreach($info as $key=>$value){
+					echo "{$key} : {$value} <br/>";
+				}
+//<<<<<<< HEAD
+// =======
+				//echo "<pre>".var_dump($_SE	SSION['member'])."</pre>";
+				//echo "<pre>".var_dump($info)."</pre>";
+// >>>>>>> fbf72d7a12c94ba3ce72ef9ff64b3cdf47840d89
+			?>
+			<a href="<?php echo $edit_url;?>">Edit Account</a>
+	<br/>		
+<?php require_once"footer.php";?>
+>>>>>>> fc5abc10c80b15a4bb050166b98d899473f7a9f3
