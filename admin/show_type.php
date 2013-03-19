@@ -6,7 +6,7 @@
 ?>
 <html>
 <head>
-
+	
 </head>
 <body>
 	<div class = "log5">
@@ -72,12 +72,11 @@
 					<div class="scrolldata">
 						<tr>
 							<form class = "form-2" name ="add" method = "POST" action = "process_add_service.php?type_id=<?php echo $_GET['type_id'];?>">
-							<td  class=\"table_display\">Service Name:
-							</td>
-							<td>
-								<input type="text" name="service_name" placeholder='(ex. Room 101, Room 502)' />
-							</td>
-							<td class=\"table_display\"><input id=mysubmit3 type=submit value=Add></td>
+							<th>SERVICE NAME</th>
+								<td>
+									<input type="text" name="service_name" placeholder='ex. Room 101, Room 502' />
+								</td>
+								<td class=\"table_display\"><input id=mysubmit type=submit value=Add></td>
 							</form>
 						</tr>
 									
@@ -90,7 +89,7 @@
 									echo "<tr >";
 									echo"<td class=\"table_display\">{$row['service_name']}</td>";
 									echo "<td class=\"table_display\"><input id=mysubmit3 type=button  onclick=window.location.href='edit_service.php?service_id={$row['service_id']}' value=Edit></td>";
-									echo "<td class=\"table_display\"><input id=mysubmit3 type=button  onclick=window.location.href='process_delete_service.php?service_id={$row['service_id']}&type_id={$row['type_id']}' value=Delete></td>";
+									echo "<td class=\"table_display\"><input id=mysubmit4 type=button  onclick=window.location.href='process_delete_service.php?service_id={$row['service_id']}&type_id={$row['type_id']}' value=Delete></td>";
 									echo "</tr>";
 								};
 							//}

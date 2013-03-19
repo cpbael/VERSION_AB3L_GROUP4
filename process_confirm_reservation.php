@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
  
 	require_once("sql_connect.php");
 	require_once("config_email.php");
@@ -44,18 +43,3 @@
 	require_once("sql_disconnect.php");
 	header("LOCATION:confirm_reservation.php");
 ?>
-=======
-  require_once("sql_connect.php");
-	session_start();
-	
-	$member_id=$_SESSION['member_id'];
-	
-	$query="UPDATE reservation SET is_Paid=1 where member_id={$member_id};";				
-	$result=mysql_query($query);
-	
-	$_SESSION['CONFIRMED']=true;
-	$_SESSION['TOTAL']=$_POST['total_reservation'];
-	header("LOCATION:confirm_reservation.php");
-	
-?>
->>>>>>> fc5abc10c80b15a4bb050166b98d899473f7a9f3

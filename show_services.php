@@ -33,18 +33,19 @@
 				//echo "<h1>{$services[$i]['service_name']}</h1>";
 				echo "<h1>{$type['type_name']}</h1>";
 				if($type['classification']!='SERVICE')				
-				echo "<span class=textWhite>RATE:</span>{$type['rate']}";
+				echo "<h3>RATE: {$type['rate']}</h3>";
 				//echo "{$services[$i]['classification']}";
 				echo "<hr/>";
 				echo "{$type['article']}";
+				echo "<hr/>";
 				if($type['classification']!='SERVICE')
-				echo"<h3>No. of Services: {$count[0]}</h3>";
+				echo"<h3><br/>No. of Services: {$count[0]}</h3>";
 				
 				//echo "<br/><a id=mysubmit href='process_delete_service.php?service_id={$services[$i]['service_id']}'>Delete</a>";
 				//echo "<a id=mysubmit href='edit_service.php?service_id={$services[$i]['service_id']}'>Edit</a>";
 				//echo "<span onclick='TINY.box.show({url:'add_reservation.php?service_id={$services[$i]['service_id']}',width:300,height:150}')><a href='#'>RESERVE</a></span>";
 				//echo "<a href='add_reservation.php?service_id={$services[$i]['service_id']}'>RESERVE</a>";
-				echo "<input id = mysubmit3 type=button onclick=window.location.href='add_reservation.php?type_id={$services[$i]['type_id']}' value=Reserve>";
+				echo "<br/><input id = mysubmit3 type=button onclick=window.location.href='add_reservation.php?type_id={$services[$i]['type_id']}' value=Reserve>";
 				echo "</figcaption></figure>";
 			
 			if($col==4){

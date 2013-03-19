@@ -6,19 +6,17 @@
 					<center>
 					<?php
 						session_start();
-						if(!(isset($_SESSION['login_msg']))){
+						if((isset($_SESSION['popUpMessage']))){
 							$_SESSION['login_msg']="Fill up to login";
+							echo '<td colspan = "2" class = "loginBottom3"><span class = "textBluer">';
+							echo $_SESSION['login_msg'];		
+							echo'</span></td>
+								</tr>
+							</tr>';
+							$_SESSION['toPopUp']=true;
+							unset($_SESSION['login_msg']);
+							session_destroy();
 						}
-						echo'<tr>
-							<tr>
-								<td colspan = "2" class = "loginBottom3"><span class = "textBluer">';
-						echo $_SESSION['login_msg'];
-								
-						echo'</span></td>
-							</tr>
-						</tr>';
-						unset($_SESSION['login_msg']);
-						session_destroy();
 					?>
 					<br/>
 					<!--input type="text" name="username" required placeholder="Username" onchange="this.value=this.value.toUpperCase();"/-->

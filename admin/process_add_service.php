@@ -1,3 +1,6 @@
+ <!--
+	Used for adding service
+ -->
 <?php
   session_start();
 	require_once"sql_connect.php";
@@ -13,8 +16,6 @@
 			$_SESSION['MSG']="SERVICE ADDED SUCCESSFULLY!";
 			echo $_SESSION['MSG'];
 		}
-
-
 	require_once"sql_disconnect.php";
 	header("LOCATION:show_type.php?type_id={$type_id}"); 
 ?>

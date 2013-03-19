@@ -16,7 +16,20 @@
 			<form class="form-2" action = "process_change_pw.php" name = "add" method="post">
 				<h1><span class="log-in">Change Password</span></h1>
 					<center>
-
+					<?php
+							if(!(isset($_SESSION['MSG']))){
+							$_SESSION['MSG']="Fill up to change password";
+						}
+						echo'<tr>
+							<tr>
+								<td colspan = "2" class = "loginBottom3"><span class = "textBluer">';
+						echo $_SESSION['MSG'];
+								
+						echo'</span></td>
+							</tr>
+						</tr>';
+						unset($_SESSION['MSG']);
+						?>
 					<br/>
 					<span class = "loginBottom1">Old password</span> 
 						<input class ="form" type="password" name="old_pw" value="" size="35" required placeholder="Old Password"/>

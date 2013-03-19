@@ -1,3 +1,6 @@
+ <!--
+	Checks if the Admin logged in the system
+ -->
 <?php
 	session_start();
 	if(!(isset($_SESSION['login']))){

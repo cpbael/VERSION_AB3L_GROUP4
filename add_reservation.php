@@ -6,10 +6,23 @@
 ?>
 <html>
 	<head>
-
+		
 	</head>
 	
 	<body>
+		<script type="text/javascript" >
+			function update_end(val){
+				var d = new Date(val);
+				d.setDate(d.getDate()+1);
+				document.getElementById('end_date').min=d.toJSON().substring(0,10);
+			}
+		</script>
+		<?php
+			if(isset($_SESSION['toPopUp'])){
+				echo "<script> TINY.box.show({url:'PopUpShowMessage.php',width:300,height:250}) </script>";
+				unset($_SESSION['toPopUp']);
+			}
+		?>
 		<div class = "log5">
 			<div class="divLeft">
 				<table class="tabla"> 
@@ -45,13 +58,13 @@
 						<tr>
 							<td class = "textBlacker">START DATE:</td>
 							<td>
-								<input type="date" name="start_date" value="<?php if(!empty($_POST['start_date'])) echo $_POST['start_date']; else if(!empty($_GET['start_date'])) echo $_GET['start_date']; ?>" min="<?php echo date('Y-m-d')?>" required>
+								<input type="date" name="start_date" value="<?php if(!empty($_POST['start_date'])) echo $_POST['start_date']; else if(!empty($_GET['start_date'])) echo $_GET['start_date']; ?>" min="<?php echo date('Y-m-d')?>" onchange="update_end(this.value)" required>
 							</td>
 						</tr>
 						<tr>
 							<td class = "textBlacker">END DATE:</td>
 							<td>
-								<input type="date" name="end_date" value="<?php if(!empty($_POST['end_date'])) echo $_POST['end_date']; else if(!empty($_GET['end_date'])) echo $_GET['end_date']; ?>" min="<?php echo date('Y-m-d')?>" required>
+								<input type="date" id= "end_date" name="end_date" value="<?php if(!empty($_POST['end_date'])) echo $_POST['end_date']; else if(!empty($_GET['end_date'])) echo $_GET['end_date']; ?>" min="<?php echo date('Y-m-d')?>" required>
 							</td>
 						</tr>
 						<tr>

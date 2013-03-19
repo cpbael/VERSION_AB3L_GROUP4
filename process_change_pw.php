@@ -6,6 +6,7 @@
 	$new=$_POST['new_pw'];
 	$confirm=$_POST['confirm_pw'];
 	$true_old=mysql_fetch_array(mysql_query("select * from member where member_id='{$_SESSION['member_id']}';"));
+	$_SESSION['CHANGE_PW']=true;
 	if(md5($old)===$true_old['password']){
 		if($new===$confirm){
 			if(mysql_query("update member set password=md5('{$confirm}') where member_id={$_SESSION['member_id']};")){
@@ -24,5 +25,5 @@
 		$_SESSION['MSG']="Incorrect password.";	
 	}
 	require_once("sql_disconnect.php");
-	header("Location:change_password.php");
+	header("Location:home.php");
 ?>

@@ -1,3 +1,13 @@
+ <!--
+	CMSC128 AB-3L GROUP 4 PROJECT: HOTEL 128 Reservation System
+	Claudine Bael
+	Theresa Mercado
+	Anitsirc Ybur Haniel
+	Renee Chiarianne Navarrosa
+	Kevin Lawrence Romas
+	
+	Description: Log In page for the Admin
+ -->
 <html>
 	<head>
 		<link rel="stylesheet" href="css/Style.css" type="text/css" media="screen"/>

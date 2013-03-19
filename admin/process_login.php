@@ -19,7 +19,7 @@
 		$row = mysql_fetch_array($result);
 		if($_POST['username']==$row['username'] && md5($_POST['pwdconfirm'])==$row['password']){
 				$_SESSION['login']=1;
-				header('Location: admin.php');
+				header('Location: view_all_reservations.php');
 				require_once("sql_disconnect.php");
 				exit;
 		}

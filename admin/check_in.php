@@ -1,3 +1,4 @@
+
 <?php 
 /*
 Piniprint yung laman ng reservation table. 
@@ -8,8 +9,6 @@ May flag sa reservation table. Pag 0-reserved, 1-checked in, -1-checked out, 2-r
   //require_once "update_reservations.php";
   require_once "sql_connect.php";
   require_once "header.php";
-  
-
 ?>
 
 <?php
@@ -52,14 +51,3 @@ May flag sa reservation table. Pag 0-reserved, 1-checked in, -1-checked out, 2-r
 	require_once("sql_disconnect.php");
 
 ?>
-
-<html>
-	<head>
-	
-	</head>
-	
-	<body>
-		
-	</body>
-
-<html>

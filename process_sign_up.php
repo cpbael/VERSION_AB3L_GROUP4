@@ -3,7 +3,8 @@
 require_once("sql_connect.php");
 	if(strcmp($_POST['pwd'], $_POST['pwdconfirm'])!=0){
 			$_SESSION['ERROR']=true;
-			$_SESSION['ERRORMSG']="*PASSWORD DOES NOT MATCH";
+			$_SESSION['ERRORMSG']="PASSWORD DOES NOT MATCH";
+			$_SESSION['ER']=1;
 	}else{
 		
 		
@@ -14,7 +15,8 @@ require_once("sql_connect.php");
 		while($row = mysql_fetch_array($result)){
 			if($_POST['username']==$row['uname']){
 				$_SESSION['ERROR']=true;
-				$_SESSION['ERRORMSG']="*USERNAME NOT AVAILABLE";
+				$_SESSION['ERRORMSG']="USERNAME NOT AVAILABLE";
+				$_SESSION['ER']=1;
 				break;
 			}else
 				$_SESSION['ERROR']=false;	
@@ -25,31 +27,13 @@ require_once("sql_connect.php");
 		if($_SESSION['ERROR']==false){
 		
 			$uname=$_POST['username'];
-<<<<<<< HEAD
 			$password=md5($_POST['pwd']);
-=======
-<<<<<<< HEAD
-			$password=$_POST['pwd'];
->>>>>>> fc5abc10c80b15a4bb050166b98d899473f7a9f3
 			$fullname=$_POST['firstname']." ".$_POST['lastname'];
 			$contactno=$_POST['contact'];
 			$eadd=$_POST['eadd'];
 			$creditcardno=$_POST['creditcardno1']."".$_POST['creditcardno2']."".$_POST['creditcardno3']."".$_POST['creditcardno4'];
-<<<<<<< HEAD
 			$query = "INSERT INTO member(uname,password,fullname,contactno,eadd,creditcardno) VALUES ('$uname', '$password', '$fullname', '$contactno', '$eadd', '$creditcardno')";
 			
-=======
-			// $query = "INSERT INTO member(uname,password,fullname,contactno,eadd) VALUES ('$uname', '$password', '$fullname', '$contactno', '$eadd', '$creditcardno')";
-			$query = "INSERT INTO member(uname,password,fullname,contactno,eadd) VALUES ('$uname', md5('$password'), '$fullname', '$contactno', '$eadd')";
-=======
-			$password=md5($_POST['pwd']);
-			$fullname=$_POST['firstname']." ".$_POST['l	astname'];
-			$contactno=(int)$_POST['contact'];
-			$eadd=$_POST['eadd'];
-			//$creditcardno=$_POST['creditcardno1']."".$_POST['creditcardno2']."".$_POST['creditcardno3']."".$_POST['creditcardno4'];
-			$query = "INSERT INTO member (uname, password, fullname, contactno, eadd) VALUES ('$uname', '$password', '$fullname', '$contactno', '$eadd')";
->>>>>>> fbf72d7a12c94ba3ce72ef9ff64b3cdf47840d89
->>>>>>> fc5abc10c80b15a4bb050166b98d899473f7a9f3
 			
 			$result = mysql_query($query);
 	
@@ -79,5 +63,5 @@ require_once("sql_connect.php");
 	}	
 	
 	mysql_close($conn);
-	header("LOCATION:sign_up.php"); 
+	header("LOCATION:login.php"); 
 ?>

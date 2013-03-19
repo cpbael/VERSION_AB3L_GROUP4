@@ -1,3 +1,6 @@
+ <!--
+	Add type/service with name, image, classification, rate, article
+ -->
 <?php
 	require_once "process_check_if_logged_in.php";
 	require_once"sql_connect.php";
@@ -11,7 +14,7 @@
 			$imgtype=str_replace("image/",".",$imgtype);
 			$image=htmlspecialchars($type.$imgtype);
 			echo $type.$image.$classification;
-			echo "huy";
+			//echo "huy";
 			if(!mysql_query("INSERT INTO type(type_name,image,classification,rate,article) VALUES ('$type','$image','$classification','$rate','$article');")){
 				$_SESSION['ERROR']=true;
 				$_SESSION['MSG']=mysql_error();

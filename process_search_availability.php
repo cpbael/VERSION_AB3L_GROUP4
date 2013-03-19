@@ -25,13 +25,17 @@
             WHERE start_date between  '{$sdate}' AND  '{$edate}') and service_id NOT IN (SELECT service_id FROM reservation
             WHERE end_date between '{$sdate}' AND  '{$edate}')) and type_id IN (SELECT type_id from type where classification='ROOM' or classification='FACILITY') group by type_id");
         			echo "<div class = log4>
-			<form  method=get action=process_search_availability.php id=search>
+			<form id = search method=get action=process_search_availability.php id=search>
 				<center>
-				START:<input type=date name=avail_sdate value={$sdate} required placeholder=Search>
-				END:<input type=date name=avail_edate value={$edate} required placeholder=Search>
-				<input type=submit id = mysubmit5 value=Search />
-			</center>
-			</form>
+				<table>
+					<tr>
+					<td><h1 class = h1>START: &nbsp</h1></td><td><input type=date name=avail_sdate value={$sdate} required placeholder=Search></td>
+					<td><h1 class = h1>END: &nbsp</h1></td><td><input type=date name=avail_edate value={$edate} required placeholder=Search></td>
+					<td><input type=submit id = mysubmit5 value=Search /></td>
+					</tr>
+				</table>
+				</center>
+			</form><br/><br/>
 		<div>";
 		
             while($results = mysql_fetch_array($raw_results)){

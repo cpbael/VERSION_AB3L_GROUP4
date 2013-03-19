@@ -53,13 +53,13 @@
 		.left {
 			top: 0;
 			left: 0;
-			width: 100% !important;
-			height: 20%;
+			width: 0% !important;
+			height: 0%;
 		}
 		.right {
 			bottom: 0;
-			width: 100% !important;
-			height: 20%;
+			width: 0% !important;
+			height: 0%;
 			display:block;
 		}
 		ul { list-style-type: none;}
@@ -128,24 +128,29 @@
 			if(isset($_SESSION['login']) && $_SESSION['login']==-1){
 				echo "<script> TINY.box.show({url:'PopUpLogin.php',width:300,height:200}) </script>";
 			}
+			else if(isset($_SESSION['ER']) && $_SESSION['ER']==1){
+				echo "<script> TINY.box.show({url:'PopUpSignUp.php',width:320,height:500}) </script>";
+			}
+
+			
 		?>
 		<div id="slider1">
 			<ul id="slider1Content">
 				<li class="slider1Image">
 					<a href=""><img src="temp/wide/1.jpg" alt="1" /></a>
-					<span class="left"><strong>128 HOTEL</strong><br />128 HOTEL</span></li>
+					<span class="left"><strong></strong><br /></span></li>
 				<li class="slider1Image">
 					<a href=""><img src="temp/wide/2.jpg" alt="2" /></a>
-					<span class="right"><strong>128 HOTEL</strong><br />128 HOTEL</span></li>
+					<span class="right"><strong></strong><br /></span></li>
 				<li class="slider1Image">
 					<img src="temp/wide/3.jpg" alt="3" />
-					<span class="right"><strong>128 HOTEL</strong><br />128 HOTEL</span></li>
+					<span class="right"><strong></strong><br /></span></li>
 				<li class="slider1Image">
 					<img src="temp/wide/4.jpg" alt="4" />
-					<span class="left"><strong>128 HOTEL</strong><br />128 HOTEL</span></li>
+					<span class="left"><strong></strong><br /></span></li>
 				<li class="slider1Image">
 					<img src="temp/wide/5.jpg" alt="5" />
-					<span class="right"><strong>128 HOTEL</strong><br />128 HOTEL</span></li>
+					<span class="right"><strong></strong><br /></span></li>
 				<div class="clear slider1Image"></div>
 			</ul>
 		</div>

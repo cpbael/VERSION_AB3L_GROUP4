@@ -11,29 +11,28 @@
     <head>
         <title>HOTEL 128</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
+		<link rel="stylesheet" href="css/styles.css" />
+			<style type="text/css" media="screen">
+				 .bg{
+				 background: url(temp/7.jpg) no-repeat;
+				 width:100%;
+				 height:666px;
+				 display:block;
+				}
+			</style>
 	</head>
-    <body>
-
-<<<<<<< HEAD
+    <body class = "bg">
+		<?php
+			if(isset($_SESSION['CHANGE_PW']) && $_SESSION['CHANGE_PW']==true){
+				unset($_SESSION['CHANGE_PW']);
+				echo "<script> TINY.box.show({url:'PopUpChangePassword.php',width:300,height:250}) </script>";
+				
+			}
+		?>
+		<div class = "log4">
+			<?php echo "<h1>Welcome Back, ".$info['fullname']."<h1>";?>
+		</div>
 	</body>
 	
 </html>
 	
-=======
-	<h1>Welcome to HRM</h1>
-			WELCOME! <a href="process_logout.php">Logout</a> <br/>
-			<?php
-				foreach($info as $key=>$value){
-					echo "{$key} : {$value} <br/>";
-				}
-//<<<<<<< HEAD
-// =======
-				//echo "<pre>".var_dump($_SE	SSION['member'])."</pre>";
-				//echo "<pre>".var_dump($info)."</pre>";
-// >>>>>>> fbf72d7a12c94ba3ce72ef9ff64b3cdf47840d89
-			?>
-			<a href="<?php echo $edit_url;?>">Edit Account</a>
-	<br/>		
-<?php require_once"footer.php";?>
->>>>>>> fc5abc10c80b15a4bb050166b98d899473f7a9f3

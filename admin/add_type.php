@@ -4,21 +4,14 @@
 	require_once "sql_connect.php";
 ?>
 	<div class="log3">
-	<table class = "loginBottom"> 
+	<table class = "tabla"> 
 	<form name = "edit_type" method = "POST" action = "process_add_type.php" enctype="multipart/form-data">
 		<tr>
 			<div class = "signup">
-				Add type
+				<td colspan = "2"><h1><center>ADD TYPE</center></h1></td>
 			</div>
 		</tr>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<tr>
-			<td colspan = "2"><hr><td>
-		</tr>
+		<br/><br/><br/><br/><br/>
 		<tr>
 			<td class = "loginBottom1">Name:</td>
 			<td><input class = "form" type="text" name="type_name" value="" size="35" required="required"/>
@@ -53,7 +46,7 @@
 		</tr>
 		<tr>
 			<td colspan = "2" class = "loginBottom1">
-			<input id="mysubmit" type="submit" value="Add Type" name = "sub" />
+				<center><input id="mysubmit" type="submit" value="Add Type" name = "sub" /></center>
 			</td>
 		</tr>
 		

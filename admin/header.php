@@ -35,7 +35,7 @@
 				<li class="yellow">
 					<a href="#" class="icon-beaker">SEARCH</a>
 					<ul>
-						<li><span onclick="TINY.box.show({url:'PopUpSearch.php',width:300,height:150})"><a href="#">Rate</a></span></li>
+						<li><span onclick="TINY.box.show({url:'PopUpSearchId.php',width:300,height:100})"><a href="#">Reservation ID</a></span></li>
 						<li><span onclick="TINY.box.show({url:'PopUpSearchByAvailability.php',width:300,height:150})"><a href="#">Availability</a></span></li>
 						<li>
 							<a href = "#">
@@ -51,7 +51,10 @@
 					<a href="#" class="icon-cogs">RESERVATIONS</a>
 					<ul>
 						<li><span><a href="show_types.php">Make Reservation</a></span></li>
-						<li><span><a href="view_all_reservations.php">View Reservations</a></span></li>
+						<li><span><a href="view_current.php">View Checked-in Guests</a></span></li>
+						<li><span><a href="view_log.php">View Past Reservations</a></span></li>
+						<li><span><a href="view_reserved.php">View Reservations</a></span></li>
+						<li><span><a href="view_all_reservations.php">View All Reservations</a></span></li>
 					</ul>
 				</li>
 

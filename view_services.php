@@ -21,7 +21,7 @@
 				echo "<tr><td>{$services[$i]['rate']}</td></tr>";
 				echo "<tr><td>{$services[$i]['classification']}</td></tr>";
 				echo "<tr><td>{$services[$i]['article']}</td></tr>";
-				echo "<tr><td><a href='add_reservation.php?service_id={$services[$i]['service_id']}'>Add reservation</a></td></tr>";
+				echo "<tr><td><br/><a href='add_reservation.php?service_id={$services[$i]['service_id']}'>Add reservation</a></td></tr>";
 			echo "</table></td>";
 			if($col==4){
 				echo "</tr>";	

@@ -16,7 +16,7 @@
 
 				<input type="email" name="eadd" value="<?php if(!empty($_SESSION['eadd'])) echo $_SESSION['eadd']; ?>" size="35" required="required" required placeholder = "Email Address"/>
 
-				<input class = "form" type="text" name="username" id="username" value="<?php if(!empty($_SESSION['username'])) echo $_SESSION['username']; ?>" size="35" required="required" onchange = "this.value=this.value.toUpperCase();" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9]*[a-zA-Z0-9 ]" required placeholder = "Username"/>
+				<input class = "form" type="text" name="username" id="username" value="<?php if(!empty($_SESSION['username'])) echo $_SESSION['username']; ?>" size="35" required="required" pattern= "[a-zA-Z0-9 ]*[a-zA-Z0-9]*[a-zA-Z0-9 ]" required placeholder = "Username"/>
 
 				<input class = "form" type="password" name="pwd" value="" size="35" required="required" required placeholder = "Password"/>
 				
@@ -26,21 +26,20 @@
 				</center>
 				<h1><span class="log-in">Credit Card Number</span></h1>
 				<center>
-				<input type="text" name="creditcardno1" value="<?php if(!empty($_SESSION['creditcardno1'])) echo $_SESSION['creditcardno1']; ?>" size="2" required="required" pattern = "[0-9][0-9][0-9][0-9]"/>-
-							<input type="text" name="creditcardno2" value="<?php if(!empty($_SESSION['creditcardno2'])) echo $_SESSION['creditcardno2']; ?>" size="2" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
-							<input type="text" name="creditcardno3" value="<?php if(!empty($_SESSION['creditcardno3'])) echo $_SESSION['creditcardno3']; ?>" size="2" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
-							<input type="text" name="creditcardno4" value="<?php if(!empty($_SESSION['creditcardno4'])) echo $_SESSION['creditcardno4']; ?>" size="2" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>
+				<input type="text"  maxlength="4" name="creditcardno1" value="<?php if(!empty($_SESSION['creditcardno1'])) echo $_SESSION['creditcardno1']; ?>" size="2" required="required" pattern = "[0-9][0-9][0-9][0-9]"/>-
+							<input type="text" name="creditcardno2" value="<?php if(!empty($_SESSION['creditcardno2'])) echo $_SESSION['creditcardno2']; ?>" size="2" maxlength="4" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
+							<input type="text"  maxlength="4"name="creditcardno3" value="<?php if(!empty($_SESSION['creditcardno3'])) echo $_SESSION['creditcardno3']; ?>" size="2" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>-
+							<input type="text" maxlength="4" name="creditcardno4" value="<?php if(!empty($_SESSION['creditcardno4'])) echo $_SESSION['creditcardno4']; ?>" size="2" required="required" pattern =  "[0-9][0-9][0-9][0-9]"/>
 				</center>
 			
 				<center>
 				<span colspan = "2"><span class = "textBlack">I </span><span class = "textBluer">CERTIFY</span> <span class = "textBlack">that all the information given in this form <br/>are true and correct.</span></span>
 				<br/>
-				<span class = "errorMsg"><br />
+				<span class = "errorMsg"><br/>
 				<?php
-
 					if(!empty($_SESSION['ERROR'])){
 						if($_SESSION['ERROR']==true && !empty($_SESSION['ERRORMSG']))
-							echo $_SESSION['ERRORMSG'];
+							echo "<p style='color: red;'>{$_SESSION['ERRORMSG']}</p>";
 					}
 					if(!empty($_SESSION['MSG']))
 							echo $_SESSION['MSG'];
